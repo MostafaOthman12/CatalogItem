@@ -321,7 +321,7 @@ def newMenuItem(restaurant_id):
                            user_id=login_session['user_id'])
         session.add(newItem)
         session.commit()
-        flash(f'New Menu {newItem.name} Item Successfully Created')
+        flash(f'New Menu %s Item Successfully Created' %newItem.name)
         return redirect(url_for('showMenu', restaurant_id=restaurant_id))
     if 'username' not in login_session:
         return redirect('/login')
