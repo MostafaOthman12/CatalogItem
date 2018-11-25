@@ -20,7 +20,7 @@ CLIENT_ID = json.loads(
     open('/var/www/flaskapp/CatalogItem/client_secret.json', 'r').read())['web']['client_id']
 
 # Connect to Database and create database session
-engine = create_engine('sqlite:///restaurantmenuwithusers.db',connect_args={'check_same_thread': False})
+engine = create_engine('postgresql://catalog:catalog@localhost/catalog',connect_args={'check_same_thread': False})
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine, autoflush=False)
